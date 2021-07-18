@@ -55,5 +55,4 @@ $(".btn").on("click", function (e){
             }, 300
         )
     }
-
 })
