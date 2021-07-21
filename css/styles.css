@@ -58,10 +58,6 @@ body {
   font-family: 'Press Start 2P', cursive;
   margin: 3% 0 0 0;
 }
-.credits:hover {
-  color: #BFCBFE;
-  transition: 400ms;
-}
 
 .credits-a {
   text-decoration: none;
