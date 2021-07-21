@@ -44,6 +44,17 @@ function gameOver (){
     $("#level-title").text("Game Over, Press Any Key To Restart");
 }
 
+// Make A Function For The Wrong Press 
+
+function wrongPress (color){
+    $("#" + color).addClass("pressed");
+    setTimeout (
+        function (){
+            $("#" + color).removeClass("pressed");
+        }, 200
+    )
+}
+
 // Add A Key-Down Event To Document
 
 $(document).on("keydown", function (){
@@ -63,9 +74,9 @@ $(document).on("keydown", function (){
 // Add Event Listeners To All The Buttons With jQuery Using The Mutual Class "btn" And Set The Game Logic
 
 $(".btn").on("click", function (e){
-    $("#" + e.target.id).fadeOut(50).fadeIn(50);
     userSequence.push(e.target.id);
     playSound(e.target.id);
+    $("#" + e.target.id).fadeOut(50).fadeIn(50);
     if (sequence.length == userSequence.length){
         var sequenceToLength = sequence.toString();
         var userSequenceToLength = userSequence.toString();
@@ -78,11 +89,11 @@ $(".btn").on("click", function (e){
             )
         } else {
             gameOver();
+            wrongPress(e.target.id);
         }
-    } else {
-        if (sequence[userSequence.length - 1] !== userSequence[userSequence.length - 1]){
-            gameOver();
-        }
+    } else if (sequence[userSequence.length - 1] !== userSequence[userSequence.length - 1]){
+        gameOver();
+        wrongPress(e.target.id);
     }
 }
 )
