@@ -52,3 +52,17 @@ body {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+
+.credits {
+  color: #FEF2BF;
+  font-family: 'Press Start 2P', cursive;
+  margin: 3% 0 0 0;
+}
+.credits:hover {
+  color: #BFCBFE;
+  transition: 400ms;
+}
+
+.credits-a {
+  text-decoration: none;
+}
