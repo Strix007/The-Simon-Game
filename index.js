@@ -81,6 +81,7 @@ $(".btn").on("click", function (e){
         var sequenceToLength = sequence.toString();
         var userSequenceToLength = userSequence.toString();
         if (sequenceToLength == userSequenceToLength){
+        $("#level-title").text("Level " + sequence.length);
             userSequence = [];
             setTimeout(
                 function (){
